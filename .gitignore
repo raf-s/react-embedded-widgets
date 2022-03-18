@@ -1,0 +1,14 @@
+# IntelliJ
+.idea
+
+# Parcel
+.parcel-cache
+
+# Build
+/dist
+
+# Packages
+node_modules
+
+# Yarn
+yarn-error.log

@@ -1,0 +1,21 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    //Parcel needs this. https://parceljs.org/languages/typescript/#isolatedmodules
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "target": "ES6",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "skipLibCheck": true,
+    "lib": [
+      "dom",
+      "es2015",
+      "es2016"
+    ],
+  },
+  "exclude": ["artifacts/**/*", "dist/**/*", "public/**/*", "node_modules"]
+}
