@@ -1,0 +1,13 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier"],
+  "rules": {
+    "scss/dollar-variable-default": null,
+    "selector-class-pattern": "^[a-z][a-z0-9\\-_]*[a-z0-9]$",
+    "font-weight-notation": null,
+    "selector-no-qualifying-type": [true, { "ignore": ["class"] }],
+    "declaration-colon-newline-after": "always-multi-line",
+    "declaration-colon-space-after": "always-single-line",
+    "value-list-comma-space-after": "always-single-line",
+    "value-list-comma-newline-after": "always-multi-line"
+  }
+}

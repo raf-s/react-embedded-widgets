@@ -18,7 +18,7 @@ export const App: React.FC = () => {
         <h1 style={{ textAlign: 'center' }}>Root App</h1>
         <p>Count: {count}</p>
         <button onClick={incrementCount}>Increment count</button>
-        <br/>
+        <br />
         <div>Time now: {format(dateState, 'dd/MM/yyyy HH:mm:ss')}</div>
         <hr />
       </div>

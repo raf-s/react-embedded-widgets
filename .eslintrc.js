@@ -16,9 +16,9 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:react/recommended',
+    'prettier',
   ],
   settings: {
     react: {
@@ -35,7 +35,6 @@ module.exports = {
     '@typescript-eslint/unbound-method': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
     'no-constant-condition': ['error', { checkLoops: false }],
-    '@typescript-eslint/camelcase': ['error', { properties: 'never' }],
     'import/no-default-export': 2,
     'no-restricted-imports': ['error', 'aws-amplify', '@material-ui/core'],
     'import/no-restricted-paths': [

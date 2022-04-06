@@ -3,13 +3,36 @@
   "version": "1.0.0",
   "author": "Raf Sz. <raf.sz@icloud.com>",
   "license": "MIT",
+  "scripts": {
+    "prepare": "husky install",
+    "start": "parcel index.html --port 3000",
+    "build": "parcel build src/index.tsx",
+    "format:other": "yarn prettier --write \"{,!(generated)/**/}*.{json,gql,graphql,yaml,yml}\"",
+    "format:code": "yarn prettier --write \"{,!(generated)/**/}*.{ts,tsx,js,jsx}\"",
+    "fix:code": "yarn lint:code --fix",
+    "fix:css": "yarn lint:css --fix",
+    "fix": "yarn fix:code && yarn fix:css && yarn format:code && yarn format:other",
+    "prettier": "prettier --trailing-comma=all --single-quote",
+    "lint:other": "yarn prettier --list-different \"{,!(generated)/**/}*.{json,gql,graphql,yaml,yml}\"",
+    "lint:css": "stylelint \"{,!({generated,dist})/**/}*.{scss,css}\"",
+    "lint:code": "eslint --max-warnings=0 --ext .js,.jsx,.ts,.tsx .",
+    "lint": "yarn lint:other && yarn lint:code && yarn lint:css"
+  },
+  "lint-staged": {
+    "!(generated)/**/*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings=0 --fix",
+      "prettier --trailing-comma=all --single-quote --write"
+    ],
+    "!(generated)/**/*.{json,gql,graphql,yaml,yml}": [
+      "prettier  --trailing-comma=all --single-quote --write"
+    ],
+    "!(generated)/**/*.{scss,css}": [
+      "stylelint --fix"
+    ]
+  },
   "prettier": {
     "trailingComma": "all",
     "singleQuote": true
-  },
-  "scripts": {
-    "start": "parcel index.html --port 3000",
-    "build": "parcel build src/index.tsx"
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
@@ -30,8 +53,13 @@
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
     "parcel": "^2.3.2",
     "prettier": "^2.6.0",
+    "stylelint": "^14.6.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard-scss": "^3.0.0",
     "typescript": "^4.6.2"
   }
 }
